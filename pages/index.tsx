@@ -7,12 +7,20 @@ const IndexPage = () => {
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
       <HeroSection />
-      <ContentContainer>
-        <Grid item xs={6}>
+      <ContentContainer alt>
+        <Grid item xs={12} sm={6}>
+          hoh
+        </Grid>
+        <Grid item xs={12} sm={6}>
           <Image src="/screenshot.png" width={400} height={800} />
         </Grid>
-        <Grid item xs={6}>
+      </ContentContainer>
+      <ContentContainer>
+        <Grid item xs={12} sm={6}>
           hoh
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Image src="/screenshot.png" width={400} height={800} />
         </Grid>
       </ContentContainer>
     </div>
