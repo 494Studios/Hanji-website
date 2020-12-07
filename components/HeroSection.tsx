@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box, Container, Grid } from '@material-ui/core';
 import Image from 'next/image';
-import HeroContent from '@components/HeroContent';
+import HeroContent from './HeroContent';
 
 const HeroSection: FC = () => (
   <>
