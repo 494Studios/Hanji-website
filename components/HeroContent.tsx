@@ -1,27 +1,48 @@
-import { Box, Grid, Typography, Button } from '@material-ui/core';
+import { Box, Grid, Typography, Button, withStyles } from '@material-ui/core';
+import { green } from '@material-ui/core/colors';
+import { StyleSheet } from '@components';
 import React, { FC } from 'react';
+
+const AndroidButton = withStyles(() => ({
+  root: {
+    backgroundColor: green[500],
+    '&:hover': {
+      backgroundColor: green[700],
+    },
+  },
+}))(Button);
 
 const HeroContent: FC = () => {
   return (
-    <Box mt={8}>
+    <Box mt={8} color="white">
       <Grid container spacing={5} direction="column">
         <Grid item>
           <Typography variant="h1">Lorem Ipsum dolor sit amet</Typography>
-          <Typography variant="body1" color="textSecondary">
+          <Typography variant="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor
           </Typography>
         </Grid>
         <Grid item container spacing={3}>
           <Grid item xs={6}>
-            <Button variant="contained" color="primary" size="large" fullWidth>
+            <AndroidButton
+              variant="contained"
+              color="primary"
+              size="large"
+              fullWidth
+              disableElevation
+            >
               Download Now
-            </Button>
+            </AndroidButton>
             <Box mt={5}>
               <Typography variant="h3" align="center">
                 4.6
               </Typography>
-              <Typography variant="body1" align="center" color="textSecondary">
+              <Typography
+                variant="body1"
+                align="center"
+                style={styles.secondaryText}
+              >
                 Rating
               </Typography>
             </Box>
@@ -29,9 +50,10 @@ const HeroContent: FC = () => {
           <Grid item xs={6}>
             <Button
               variant="contained"
-              color="secondary"
+              color="default"
               size="large"
               fullWidth
+              disableElevation
             >
               Join Waitlist
             </Button>
@@ -39,7 +61,11 @@ const HeroContent: FC = () => {
               <Typography variant="h3" align="center">
                 10,000+
               </Typography>
-              <Typography variant="body1" align="center" color="textSecondary">
+              <Typography
+                variant="body1"
+                align="center"
+                style={styles.secondaryText}
+              >
                 Downloads
               </Typography>
             </Box>
@@ -48,6 +74,12 @@ const HeroContent: FC = () => {
       </Grid>
     </Box>
   );
+};
+
+const styles: StyleSheet = {
+  secondaryText: {
+    opacity: 0.8,
+  },
 };
 
 export default HeroContent;

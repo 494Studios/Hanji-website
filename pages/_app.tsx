@@ -10,6 +10,14 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     let theme = createMuiTheme({
+      palette: {
+        primary: {
+          main: '#3F51B5',
+        },
+        secondary: {
+          main: '#F44336',
+        },
+      },
       typography: {
         h1: {
           fontSize: '5rem',

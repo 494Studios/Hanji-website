@@ -6,12 +6,14 @@ import {
   Header,
   HeroSection,
   ReviewSection,
+  ScrollAppBar,
   StyleSheet,
 } from '@components';
 
 const IndexPage = () => {
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
+      <ScrollAppBar />
       <HeroSection />
       <ContentContainer alt>
         <Grid item xs={12} md={6} style={styles.gridColumn}>
