@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box, Container, Grid } from '@material-ui/core';
 import Image from 'next/image';
-import HeroContent from './HeroContent';
+import { HeroContent, StyleSheet } from '@components';
 
 const HeroSection: FC = () => (
   <>
@@ -11,14 +11,7 @@ const HeroSection: FC = () => (
           <Grid item xs={12} md={6}>
             <HeroContent />
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            direction="row"
-            justify="center"
-            style={{ display: 'flex' }}
-          >
+          <Grid item xs={12} md={6} style={styles.gridColumn}>
             <Image
               src="/hero-graphic.svg"
               width={511}
@@ -29,7 +22,7 @@ const HeroSection: FC = () => (
         </Grid>
       </Container>
     </Box>
-    <div style={{ height: 150, overflow: 'hidden' }}>
+    <div style={styles.endWave}>
       <svg
         viewBox="0 0 500 150"
         preserveAspectRatio="none"
@@ -43,5 +36,17 @@ const HeroSection: FC = () => (
     </div>
   </>
 );
+
+const styles: StyleSheet = {
+  gridColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  endWave: {
+    height: 150,
+    overflow: 'hidden',
+  },
+};
 
 export default HeroSection;

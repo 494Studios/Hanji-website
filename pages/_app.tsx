@@ -18,6 +18,9 @@ export default class MyApp extends App {
         h3: {
           fontWeight: 500,
         },
+        h4: {
+          fontWeight: 500,
+        },
         body1: {
           fontSize: '1.5rem',
         },
