@@ -8,10 +8,17 @@ const HeroSection: FC = () => (
     <Box pt={8} bgcolor="#F3F5FE">
       <Container>
         <Grid container spacing={10}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
             <HeroContent />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            direction="row"
+            justify="center"
+            style={{ display: 'flex' }}
+          >
             <Image
               src="/hero-graphic.svg"
               width={511}
