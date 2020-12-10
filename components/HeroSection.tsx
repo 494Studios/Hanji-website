@@ -2,8 +2,16 @@ import React, { FC } from 'react';
 import { Box, Container, Grid, Toolbar, useTheme } from '@material-ui/core';
 import Image from 'next/image';
 import { HeroContent, StyleSheet } from '@components';
+import { Graphic } from 'prismic-configuration';
+import { RichTextBlock } from 'prismic-reactjs';
 
-const HeroSection: FC = () => {
+export interface HeroSectionProps {
+  title: RichTextBlock[];
+  description: RichTextBlock[];
+  image: Graphic;
+}
+
+const HeroSection: FC<HeroSectionProps> = ({ image, ...rest }) => {
   const { palette } = useTheme();
 
   return (
@@ -13,15 +21,10 @@ const HeroSection: FC = () => {
         <Container>
           <Grid container spacing={10}>
             <Grid item xs={12} md={6}>
-              <HeroContent />
+              <HeroContent {...rest} />
             </Grid>
             <Grid item xs={12} md={6} style={styles.gridColumn}>
-              <Image
-                src="/hero-graphic.svg"
-                width={511}
-                height={648}
-                quality={100}
-              />
+              <Image src={image.url} width={511} height={648} quality={100} />
             </Grid>
           </Grid>
         </Container>

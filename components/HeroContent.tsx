@@ -2,6 +2,12 @@ import { Box, Grid, Typography, Button, withStyles } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import { StyleSheet } from '@components';
 import React, { FC } from 'react';
+import { RichText, RichTextBlock } from 'prismic-reactjs';
+
+export interface HeroContentProps {
+  title: RichTextBlock[];
+  description: RichTextBlock[];
+}
 
 const AndroidButton = withStyles(() => ({
   root: {
@@ -12,15 +18,14 @@ const AndroidButton = withStyles(() => ({
   },
 }))(Button);
 
-const HeroContent: FC = () => {
+const HeroContent: FC<HeroContentProps> = ({ title, description }) => {
   return (
     <Box mt={8} color="white">
       <Grid container spacing={5} direction="column">
         <Grid item>
-          <Typography variant="h1">Lorem Ipsum dolor sit amet</Typography>
+          <Typography variant="h1">{RichText.asText(title)}</Typography>
           <Typography variant="body1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
+            {RichText.asText(description)}
           </Typography>
         </Grid>
         <Grid item container spacing={3}>
