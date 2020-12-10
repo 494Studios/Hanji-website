@@ -38,6 +38,8 @@ interface Props {
 export async function getStaticProps() {
   const home: HomePageData = (await Client().getSingle('homepage', {})).data;
 
+  console.log(home.body[1].items);
+
   return {
     props: {
       hero: {
@@ -71,7 +73,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
           </Grid>
         </ContentContainer>
       ))}
-      <ReviewSection />
+      <ReviewSection reviews={reviews} />
     </div>
   );
 };

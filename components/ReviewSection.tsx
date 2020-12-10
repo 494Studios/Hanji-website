@@ -7,10 +7,11 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
+import { Review } from 'prismic-configuration';
 import React, { FC } from 'react';
 import ReviewCard from './ReviewCard';
 
-const ReviewSection: FC = () => {
+const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
   const theme = useTheme();
 
   const matchedMed = useMediaQuery(theme.breakpoints.up('md'));
@@ -32,14 +33,14 @@ const ReviewSection: FC = () => {
           </Typography>
         </Box>
         <GridList cols={cols} cellHeight="auto">
-          {[1, 2, 3, 4, 5, 6].map((tile) => (
-            <GridListTile key={tile}>
+          {reviews.map((review, index) => (
+            <GridListTile key={index}>
               <ReviewCard
-                title="Great App"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                author="John Doe"
-                source="Google Play"
-                rating={5}
+                title={review.title}
+                description={review.description}
+                author={review.author}
+                source={review.source}
+                rating={review.rating}
               />
             </GridListTile>
           ))}
