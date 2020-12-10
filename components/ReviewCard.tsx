@@ -12,10 +12,11 @@ import {
   StarRounded,
 } from '@material-ui/icons';
 import { StyleSheet } from '@components';
+import { RichText, RichTextBlock } from 'prismic-reactjs';
 
 export interface ReviewCardProps {
-  title: string;
-  description: string;
+  title: RichTextBlock[];
+  description: RichTextBlock[];
   author: string;
   source: string;
   rating: number;
@@ -60,7 +61,7 @@ const ReviewCard: FC<ReviewCardProps> = ({
             {starList}
           </Box>
           <Typography variant="h4" align="center">
-            {title}
+            {RichText.asText(title)}
           </Typography>
           <Typography
             variant="body1"
@@ -68,7 +69,7 @@ const ReviewCard: FC<ReviewCardProps> = ({
             align="center"
             style={styles.body}
           >
-            {description}
+            {RichText.asText(description)}
           </Typography>
           <Typography
             variant="body2"
