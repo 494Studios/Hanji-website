@@ -3,6 +3,7 @@ import { Box, Grid, Typography } from '@material-ui/core';
 import Image from 'next/image';
 import {
   ContentContainer,
+  FooterSection,
   Header,
   HeroSection,
   ReviewSection,
@@ -74,6 +75,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
       ))}
       <ReviewSection reviews={reviews} />
       <WaitListSection />
+      <FooterSection />
     </div>
   );
 };
