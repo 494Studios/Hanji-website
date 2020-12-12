@@ -77,6 +77,7 @@ const WaitListForm: FC<WaitListProps> = () => {
             style={{
               position: 'absolute',
               top: '50%',
+              opacity: 0.8,
               visibility: success ? 'visible' : 'hidden',
             }}
           >
