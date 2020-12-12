@@ -17,6 +17,7 @@ import {
   Slice,
 } from 'prismic-configuration';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
+import WaitListSection from 'components/WaitListSection';
 
 interface HomePageData {
   hero_title: RichTextBlock[];
@@ -37,8 +38,6 @@ interface Props {
 
 export async function getStaticProps() {
   const home: HomePageData = (await Client().getSingle('homepage', {})).data;
-
-  console.log(home.body[1].items);
 
   return {
     props: {
@@ -74,6 +73,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
         </ContentContainer>
       ))}
       <ReviewSection reviews={reviews} />
+      <WaitListSection />
     </div>
   );
 };
