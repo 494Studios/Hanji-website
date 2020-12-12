@@ -8,6 +8,7 @@ import {
   ReviewSection,
   ScrollAppBar,
   StyleSheet,
+  WaitListSection,
 } from '@components';
 import {
   Client,
@@ -17,7 +18,6 @@ import {
   Slice,
 } from 'prismic-configuration';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
-import WaitListSection from 'components/WaitListSection';
 
 interface HomePageData {
   hero_title: RichTextBlock[];
