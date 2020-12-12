@@ -9,7 +9,7 @@ const FooterSection: FC = () => {
         <Typography variant="body2" color="textSecondary" component="div">
           <Grid container spacing={3} justify="center">
             <Grid item>
-              <Link color="inherit" href="#">
+              <Link color="inherit" href="/privacy">
                 Privacy Policy
               </Link>
             </Grid>
