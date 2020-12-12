@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import MailerLite from 'mailerlite-api-v2-node';
 
 const GROUP_ID = 105294742;
-const mailerLite = MailerLite('0f4c8ec7ca634dd1e112865da2f0517a');
+const mailerLite = MailerLite(process.env.MAILER_LITE_KEY as string);
 
 export default async function handler(
   req: NextApiRequest,
