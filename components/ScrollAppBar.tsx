@@ -24,7 +24,7 @@ const ElevationScroll: FC = ({ children }) => {
 
   return cloneElement(children as ReactElement, {
     elevation: trigger ? 4 : 0,
-    color: trigger ? 'basic' : 'primary',
+    color: trigger ? 'default' : 'primary',
     style: { backgroundColor: trigger ? 'white' : 'transparent' },
   });
 };
