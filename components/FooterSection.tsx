@@ -14,7 +14,7 @@ const FooterSection: FC = () => {
               </Link>
             </Grid>
             <Grid item>
-              <Link color="inherit" href="#">
+              <Link color="inherit" href="/terms">
                 Terms &amp; Conditions
               </Link>
             </Grid>
