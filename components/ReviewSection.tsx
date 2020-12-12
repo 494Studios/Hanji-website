@@ -7,6 +7,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
+import { grey } from '@material-ui/core/colors';
 import { Review } from 'prismic-configuration';
 import React, { FC } from 'react';
 import ReviewCard from './ReviewCard';
@@ -25,7 +26,7 @@ const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
   }
 
   return (
-    <Box pt={16} pb={16} bgcolor="#F9F9F9">
+    <Box pt={16} pb={16} bgcolor={grey[100]}>
       <Container>
         <Box mb={16}>
           <Typography variant="h3" align="center">
