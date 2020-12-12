@@ -110,9 +110,7 @@ const WaitListForm: FC<WaitListProps> = () => {
             style={{ marginTop: 32, maxWidth: 300 }}
             disableElevation
             fullWidth
-            onClick={() => {
-              doPost();
-            }}
+            onClick={() => doPost(name, email)}
           >
             {loading ? (
               <CircularProgress style={{ margin: 'auto' }} size="1.5rem" />

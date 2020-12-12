@@ -10,11 +10,11 @@ const usePostEmail = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<null | boolean>(null);
 
-  const doPost = useCallback(() => {
+  const doPost = useCallback((name: string, email: string) => {
     setLoading(true);
 
     axios
-      .get('/api/email')
+      .post('/api/email', { name, email })
       .then(() => setSuccess(true))
       .catch(() => setSuccess(false))
       .then(() => setLoading(false));
