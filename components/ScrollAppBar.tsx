@@ -6,7 +6,13 @@ import {
   Button,
   Container,
   Link,
+  useMediaQuery,
+  useTheme,
+  IconButton,
+  Menu,
+  MenuItem,
 } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 import Image from 'next/image';
 import React, { cloneElement, CSSProperties, FC, ReactElement } from 'react';
 
@@ -24,6 +30,13 @@ const ElevationScroll: FC = ({ children }) => {
 };
 
 const ScrollAppBar: FC = () => {
+  const theme = useTheme();
+  const showFull = useMediaQuery(theme.breakpoints.up('sm'));
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleClose = () => setAnchorEl(null);
+
   return (
     <ElevationScroll>
       <AppBar>
@@ -42,9 +55,35 @@ const ScrollAppBar: FC = () => {
                 Hanji
               </Typography>
             </Link>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Contact</Button>
-            <Button color="inherit">Open Source</Button>
+            {showFull ? (
+              <>
+                <Button color="inherit">About</Button>
+                <Button color="inherit">Contact</Button>
+                <Button color="inherit">Open Source</Button>
+              </>
+            ) : (
+              <>
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={(e) => setAnchorEl(e.currentTarget)}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu"
+                  anchorEl={anchorEl}
+                  open={!!anchorEl}
+                  onClose={handleClose}
+                  keepMounted
+                >
+                  <MenuItem onClick={handleClose}>About</MenuItem>
+                  <MenuItem onClick={handleClose}>Contact</MenuItem>
+                  <MenuItem onClick={handleClose}>Open Source</MenuItem>
+                </Menu>
+              </>
+            )}
           </Container>
         </Toolbar>
       </AppBar>
