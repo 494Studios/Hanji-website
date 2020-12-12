@@ -6,3 +6,5 @@ export { default as ReviewCard } from './ReviewCard';
 export { default as ReviewSection } from './ReviewSection';
 export { default as ScrollAppBar } from './ScrollAppBar';
 export { default as StyleSheet } from './StyleSheet';
+export { default as WaitListForm } from './WaitListForm';
+export { default as WaitListSection } from './WaitListSection';
