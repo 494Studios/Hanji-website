@@ -5,13 +5,12 @@ import {
   useScrollTrigger,
   Button,
   Container,
+  Link,
 } from '@material-ui/core';
-import React, { cloneElement, FC, ReactElement } from 'react';
+import Image from 'next/image';
+import React, { cloneElement, CSSProperties, FC, ReactElement } from 'react';
 
 const ElevationScroll: FC = ({ children }) => {
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -29,10 +28,20 @@ const ScrollAppBar: FC = () => {
     <ElevationScroll>
       <AppBar>
         <Toolbar>
-          <Container style={{ display: 'flex', flexDirection: 'row' }}>
-            <Typography variant="h6" style={{ flexGrow: 1 }}>
-              Hanji
-            </Typography>
+          <Container style={styles.container}>
+            <Link href="/" color="inherit" underline="none" style={styles.link}>
+              <Image
+                src="/app-icon.svg"
+                layout="fixed"
+                width={48}
+                height={48}
+                quality={100}
+                priority
+              />
+              <Typography variant="h6" style={styles.mainText}>
+                Hanji
+              </Typography>
+            </Link>
             <Button color="inherit">About</Button>
             <Button color="inherit">Contact</Button>
             <Button color="inherit">Open Source</Button>
@@ -41,6 +50,24 @@ const ScrollAppBar: FC = () => {
       </AppBar>
     </ElevationScroll>
   );
+};
+
+const styles: Record<string, CSSProperties> = {
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  link: {
+    display: 'flex',
+    flexGrow: 1,
+    flexDirection: 'row',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  mainText: {
+    marginLeft: 8,
+    fontWeight: 600,
+  },
 };
 
 export default ScrollAppBar;
