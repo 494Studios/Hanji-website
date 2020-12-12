@@ -1,4 +1,5 @@
 export { default as ContentContainer } from './ContentContainer';
+export { default as FooterSection } from './FooterSection';
 export { default as Header } from './Header';
 export { default as HeroContent } from './HeroContent';
 export { default as HeroSection } from './HeroSection';
