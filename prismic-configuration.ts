@@ -1,9 +1,8 @@
 import Prismic from 'prismic-javascript';
 import { RichTextBlock } from 'prismic-reactjs';
 
-export const apiEndpoint = 'process.env.NEXT_PUBLIC_PRISMIC_ENDPOINT as string';
-export const accessToken =
-  'MC5YOUZlZFJJQUFDZ0F4U2Fa.77-9SVfvv71977-9Ne-_ve-_vUXvv71_Wu-_vQDvv71DAe-_ve-_ve-_ve-_ve-_vTYjce-_ve-_vXFf77-977-9';
+export const apiEndpoint = process.env.NEXT_PUBLIC_PRISMIC_ENDPOINT as string;
+export const accessToken = process.env.NEXT_PUBLIC_PRISMIC_TOKEN;
 
 // Client method to query documents from the Prismic repo
 export const Client = () => Prismic.client(apiEndpoint, { accessToken });
