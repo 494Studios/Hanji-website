@@ -59,7 +59,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
       <ScrollAppBar />
       <HeroSection {...hero} />
       {sections.map((section, index) => (
-        <ContentContainer alt={index % 2 === 0}>
+        <ContentContainer alt={index % 2 === 0} key={index}>
           <Grid item xs={12} md={6} style={styles.gridColumn}>
             <Header>{RichText.asText(section.header)}</Header>
             <Box mt={5} pb={16}>

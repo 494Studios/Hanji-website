@@ -6,7 +6,7 @@ const FooterSection: FC = () => {
   return (
     <Box pt={8} pb={8} bgcolor={grey[100]}>
       <Container>
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" color="textSecondary" component="div">
           <Grid container spacing={3} justify="center">
             <Grid item>
               <Link color="inherit" href="#">
