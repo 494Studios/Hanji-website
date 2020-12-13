@@ -9,6 +9,7 @@ export interface HeroSectionProps {
   title: RichTextBlock[];
   description: RichTextBlock[];
   image: Graphic;
+  onWaitClick: () => void;
 }
 
 const HeroSection: FC<HeroSectionProps> = ({ image, ...rest }) => {

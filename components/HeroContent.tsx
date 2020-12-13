@@ -1,5 +1,6 @@
 import { Box, Grid, Typography, Button, withStyles } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
+import AndroidIcon from '@material-ui/icons/Android';
 import { StyleSheet } from '@components';
 import React, { FC } from 'react';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
@@ -7,6 +8,7 @@ import { RichText, RichTextBlock } from 'prismic-reactjs';
 export interface HeroContentProps {
   title: RichTextBlock[];
   description: RichTextBlock[];
+  onWaitClick: () => void;
 }
 
 const AndroidButton = withStyles(() => ({
@@ -18,7 +20,11 @@ const AndroidButton = withStyles(() => ({
   },
 }))(Button);
 
-const HeroContent: FC<HeroContentProps> = ({ title, description }) => {
+const HeroContent: FC<HeroContentProps> = ({
+  title,
+  description,
+  onWaitClick,
+}) => {
   return (
     <Box mt={8} color="white">
       <Grid container spacing={5} direction="column">
@@ -36,6 +42,8 @@ const HeroContent: FC<HeroContentProps> = ({ title, description }) => {
               size="large"
               fullWidth
               disableElevation
+              href="https://play.google.com/store/apps/details?id=com.a494studios.koreanconjugator"
+              startIcon={<AndroidIcon />}
             >
               Download Now
             </AndroidButton>
@@ -59,6 +67,7 @@ const HeroContent: FC<HeroContentProps> = ({ title, description }) => {
               size="large"
               fullWidth
               disableElevation
+              onClick={onWaitClick}
             >
               Join Waitlist
             </Button>
