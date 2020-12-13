@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
 import Image from 'next/image';
 import {
@@ -54,10 +54,17 @@ export async function getStaticProps() {
 }
 
 const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
+  const waitListRef = useRef<any>(null);
+
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
       <ScrollAppBar />
-      <HeroSection {...hero} />
+      <HeroSection
+        {...hero}
+        onWaitClick={() =>
+          waitListRef.current?.scrollIntoView({ behavior: 'smooth' })
+        }
+      />
       {sections.map((section, index) => (
         <ContentContainer alt={index % 2 === 0} key={index}>
           <Grid item xs={12} md={6} style={styles.gridColumn}>
@@ -74,7 +81,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
         </ContentContainer>
       ))}
       <ReviewSection reviews={reviews} />
-      <WaitListSection />
+      <WaitListSection waitListRef={waitListRef} />
       <FooterSection />
     </div>
   );
