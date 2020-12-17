@@ -4,6 +4,7 @@ import WaitListForm from './WaitListForm';
 
 const WaitListSection: FC<{ waitListRef: any }> = ({ waitListRef }) => {
   return (
+    // @ts-ignore
     <Box pt={16} pb={16} bgcolor="primary.main" color="white" ref={waitListRef}>
       <Container maxWidth="md">
         <Typography variant="h3" align="center" gutterBottom>
