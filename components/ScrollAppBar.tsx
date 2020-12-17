@@ -57,7 +57,9 @@ const ScrollAppBar: FC = () => {
             </Link>
             {showFull ? (
               <>
-                <Button color="inherit">About</Button>
+                <Button color="inherit" href="/about">
+                  About
+                </Button>
                 <Button color="inherit">Contact</Button>
                 <Button color="inherit">Open Source</Button>
               </>
