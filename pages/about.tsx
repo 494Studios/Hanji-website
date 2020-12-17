@@ -1,5 +1,11 @@
-import { ContentContainer, Header, ScrollAppBar } from '@components';
-import { Box, Grid, Typography } from '@material-ui/core';
+import {
+  ContentContainer,
+  FooterSection,
+  Header,
+  ScrollAppBar,
+  StyleSheet,
+} from '@components';
+import { Box, Container, Grid, Typography } from '@material-ui/core';
 import React, { FC } from 'react';
 import Image from 'next/image';
 import HeroSection from 'components/about/HeroSection';
@@ -10,16 +16,7 @@ const AboutPage: FC = () => {
       <ScrollAppBar />
       <HeroSection />
       <ContentContainer backgroundColor={'white'}>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
+        <Grid item xs={12} md={6} style={styles.centered}>
           <Header>Our Story</Header>
           <Box mt={5} pb={16}>
             <Typography variant="body1" color="textSecondary">
@@ -34,8 +31,36 @@ const AboutPage: FC = () => {
           <Image src="/word-cloud.svg" width={655} height={655} quality={100} />
         </Grid>
       </ContentContainer>
+      <Box pt={16} pb={16}>
+        <Container maxWidth="sm" style={styles.centered}>
+          <Typography variant="h3" gutterBottom align="center">
+            A 494 Studios Product
+          </Typography>
+          <Typography variant="body1" color="textSecondary" align="center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Typography>
+          <Box mt={8}>
+            <Image
+              src="/about-graphic.svg"
+              width={508}
+              height={408}
+              quality={100}
+            />
+          </Box>
+        </Container>
+      </Box>
+      <FooterSection />
     </div>
   );
+};
+
+const styles: StyleSheet = {
+  centered: {
+    display: 'flex',
+    alignContent: 'center',
+    flexDirection: 'column',
+  },
 };
 
 export default AboutPage;
