@@ -80,7 +80,9 @@ const ScrollAppBar: FC = () => {
                   onClose={handleClose}
                   keepMounted
                 >
-                  <MenuItem onClick={handleClose}>About</MenuItem>
+                  <Link href="/about" color="inherit" underline="none">
+                    <MenuItem onClick={handleClose}>About</MenuItem>
+                  </Link>
                   <MenuItem onClick={handleClose}>Contact</MenuItem>
                   <MenuItem onClick={handleClose}>Open Source</MenuItem>
                 </Menu>
