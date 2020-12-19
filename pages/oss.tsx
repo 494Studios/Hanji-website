@@ -6,12 +6,36 @@ import {
   ScrollAppBar,
   StyleSheet,
 } from '@components';
-import { Box, Container, Grid, Typography } from '@material-ui/core';
+import {
+  Box,
+  Container,
+  Grid,
+  GridList,
+  GridListTile,
+  makeStyles,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 import React, { FC } from 'react';
 import Image from 'next/image';
+import RepoCard from 'components/oss/RepoCard';
+
+const useStyles = makeStyles({
+  tile: { display: 'flex', overflow: 'visible' },
+});
 
 const OSSPage: FC = () => {
+  const { breakpoints } = useTheme();
+  const classes = useStyles();
+  const matchedSm = useMediaQuery(breakpoints.up('sm'));
+
+  let cols = 1;
+  if (matchedSm) {
+    cols = 2;
+  }
+
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
       <ScrollAppBar />
@@ -46,6 +70,38 @@ const OSSPage: FC = () => {
       <Box pt={16} pb={16} bgcolor={grey[100]}>
         <Container>
           <Header>Source Code</Header>
+          <Box mt={2} mb={8}>
+            <Typography color="textSecondary">
+              All of Hanji's code is open source and available online.
+            </Typography>
+          </Box>
+          <GridList
+            cols={cols}
+            cellHeight="auto"
+            style={{ overflow: 'visible' }}
+          >
+            <GridListTile classes={{ tile: classes.tile }}>
+              <RepoCard
+                title="Hanji - Android App"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                url="#"
+              />
+            </GridListTile>
+            <GridListTile classes={{ tile: classes.tile }}>
+              <RepoCard
+                title="Hanji - Server"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                url="#"
+              />
+            </GridListTile>
+            <GridListTile classes={{ tile: classes.tile }}>
+              <RepoCard
+                title="Hanji - Website"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                url="#"
+              />
+            </GridListTile>
+          </GridList>
         </Container>
       </Box>
       <FooterSection />
