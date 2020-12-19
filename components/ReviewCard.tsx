@@ -49,9 +49,9 @@ const ReviewCard: FC<ReviewCardProps> = ({
   }
 
   return (
-    <Box margin={2}>
-      <Card elevation={5} style={{ borderRadius: 10 }}>
-        <CardContent>
+    <Box margin={2} display="flex" alignSelf="stretch">
+      <Card elevation={5} style={styles.card}>
+        <CardContent style={styles.cardContent}>
           <Box
             display="flex"
             flexDirection="row"
@@ -60,23 +60,19 @@ const ReviewCard: FC<ReviewCardProps> = ({
           >
             {starList}
           </Box>
-          <Typography variant="h4" align="center">
+          <Typography variant="h4" align="center" gutterBottom>
             {RichText.asText(title)}
           </Typography>
           <Typography
             variant="body1"
             color="textSecondary"
             align="center"
-            style={styles.body}
+            style={{ flexGrow: 1 }}
+            gutterBottom
           >
             {RichText.asText(description)}
           </Typography>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            align="center"
-            style={styles.body}
-          >
+          <Typography variant="body2" color="textSecondary" align="center">
             {`${author} via ${source}`}
           </Typography>
         </CardContent>
@@ -89,8 +85,15 @@ const styles: StyleSheet = {
   star: {
     color: '#FFB400',
   },
-  body: {
-    marginTop: 16,
+  card: {
+    borderRadius: 10,
+    display: 'flex',
+    justifyContent: 'stretch',
+  },
+  cardContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
 };
 
