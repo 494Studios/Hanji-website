@@ -5,7 +5,7 @@ import {
   ContentContainer,
   FooterSection,
   Header,
-  HeroSection,
+  MainHeroSection,
   ReviewSection,
   ScrollAppBar,
   StyleSheet,
@@ -59,7 +59,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
       <ScrollAppBar />
-      <HeroSection
+      <MainHeroSection
         {...hero}
         onWaitClick={() =>
           waitListRef.current?.scrollIntoView({ behavior: 'smooth' })
