@@ -61,7 +61,9 @@ const ScrollAppBar: FC = () => {
                   About
                 </Button>
                 <Button color="inherit">Contact</Button>
-                <Button color="inherit">Open Source</Button>
+                <Button color="inherit" href="/oss">
+                  Open Source
+                </Button>
               </>
             ) : (
               <>
@@ -84,7 +86,9 @@ const ScrollAppBar: FC = () => {
                     <MenuItem onClick={handleClose}>About</MenuItem>
                   </Link>
                   <MenuItem onClick={handleClose}>Contact</MenuItem>
-                  <MenuItem onClick={handleClose}>Open Source</MenuItem>
+                  <Link href="/oss" color="inherit" underline="none">
+                    <MenuItem onClick={handleClose}>Open Source</MenuItem>
+                  </Link>
                 </Menu>
               </>
             )}

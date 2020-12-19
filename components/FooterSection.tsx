@@ -19,7 +19,7 @@ const FooterSection: FC = () => {
               </Link>
             </Grid>
             <Grid item>
-              <Link color="inherit" href="#">
+              <Link color="inherit" href="/oss">
                 Commitment to Open Source
               </Link>
             </Grid>
