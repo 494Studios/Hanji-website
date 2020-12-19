@@ -1,20 +1,23 @@
 import {
+  AboutHeroContent,
   ContentContainer,
   FooterSection,
   Header,
+  HeroSection,
   ScrollAppBar,
   StyleSheet,
 } from '@components';
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import React, { FC } from 'react';
 import Image from 'next/image';
-import HeroSection from 'components/about/HeroSection';
 
 const AboutPage: FC = () => {
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
       <ScrollAppBar />
-      <HeroSection />
+      <HeroSection>
+        <AboutHeroContent />
+      </HeroSection>
       <ContentContainer backgroundColor={'white'}>
         <Grid item xs={12} md={6} style={styles.centered}>
           <Header>Our Story</Header>

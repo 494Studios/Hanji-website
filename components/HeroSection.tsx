@@ -1,40 +1,21 @@
 import React, { FC } from 'react';
-import { Box, Container, Grid, Toolbar, useTheme } from '@material-ui/core';
-import Image from 'next/image';
-import { HeroContent, StyleSheet } from '@components';
-import { Graphic } from 'prismic-configuration';
-import { RichTextBlock } from 'prismic-reactjs';
+import { Box, Toolbar, useTheme } from '@material-ui/core';
+import { StyleSheet } from '@components';
 
-export interface HeroSectionProps {
-  title: RichTextBlock[];
-  description: RichTextBlock[];
-  image: Graphic;
-  onWaitClick: () => void;
-}
-
-const HeroSection: FC<HeroSectionProps> = ({ image, ...rest }) => {
+const HeroSection: FC = ({ children }) => {
   const { palette } = useTheme();
 
   return (
     <>
       <Toolbar style={{ background: palette.primary.main }} />
-      <Box pt={8} bgcolor={palette.primary.main}>
-        <Container>
-          <Grid container spacing={10}>
-            <Grid item xs={12} md={6}>
-              <HeroContent {...rest} />
-            </Grid>
-            <Grid item xs={12} md={6} style={styles.gridColumn}>
-              <Image
-                src={image.url}
-                width={511}
-                height={648}
-                quality={100}
-                priority
-              />
-            </Grid>
-          </Grid>
-        </Container>
+      <Box
+        pt={8}
+        bgcolor={palette.primary.main}
+        color="white"
+        height="60vh"
+        display="flex"
+      >
+        {children}
       </Box>
       <div style={styles.endWave}>
         <svg
@@ -53,11 +34,6 @@ const HeroSection: FC<HeroSectionProps> = ({ image, ...rest }) => {
 };
 
 const styles: StyleSheet = {
-  gridColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
   endWave: {
     height: 150,
     overflow: 'hidden',
