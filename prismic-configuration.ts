@@ -1,3 +1,4 @@
+import { RepoCardProps } from 'components/oss/RepoCard';
 import Prismic from 'prismic-javascript';
 import { RichTextBlock } from 'prismic-reactjs';
 
@@ -15,7 +16,8 @@ export type Slice =
   | {
       slice_type: 'review';
       items: Review[];
-    };
+    }
+  | RepoSlice;
 
 export type Graphic = {
   dimensions: {
@@ -39,4 +41,13 @@ export type Review = {
   description: RichTextBlock[];
   author: string;
   source: string;
+};
+
+export type RepoSlice = {
+  slice_type: 'repo';
+  primary: {
+    header: RichTextBlock[];
+    blurb: RichTextBlock[];
+  };
+  items: RepoCardProps[];
 };
