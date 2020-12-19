@@ -3,6 +3,7 @@ import {
   Container,
   GridList,
   GridListTile,
+  makeStyles,
   Typography,
   useMediaQuery,
   useTheme,
@@ -12,8 +13,13 @@ import { Review } from 'prismic-configuration';
 import React, { FC } from 'react';
 import ReviewCard from './ReviewCard';
 
+const useStyles = makeStyles({
+  tile: { display: 'flex' },
+});
+
 const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
   const theme = useTheme();
+  const classes = useStyles();
 
   const matchedMed = useMediaQuery(theme.breakpoints.up('md'));
   const matchedSm = useMediaQuery(theme.breakpoints.up('sm'));
@@ -35,7 +41,7 @@ const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
         </Box>
         <GridList cols={cols} cellHeight="auto">
           {reviews.map((review, index) => (
-            <GridListTile key={index}>
+            <GridListTile key={index} classes={{ tile: classes.tile }}>
               <ReviewCard
                 title={review.title}
                 description={review.description}
