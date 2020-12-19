@@ -16,7 +16,7 @@ const RepoCard: FC<RepoCardProps> = ({ name, description, link }) => {
       <Card elevation={5} style={styles.card}>
         <CardContent style={styles.cardContent}>
           <Box display="flex" alignItems="center" mb={3}>
-            <GitHub style={{ marginRight: 8, fontSize: '2.5rem' }} />
+            <GitHub style={styles.icon} />
             <Typography variant="h4">{RichText.asText(name)}</Typography>
           </Box>
           <Typography
@@ -27,6 +27,7 @@ const RepoCard: FC<RepoCardProps> = ({ name, description, link }) => {
           >
             {RichText.asText(description)}
           </Typography>
+          {/* @ts-ignore */}
           <Button
             variant="text"
             href={link.url}
@@ -51,6 +52,10 @@ const styles: StyleSheet = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+  },
+  icon: {
+    marginRight: 8,
+    fontSize: '2.5rem',
   },
 };
 
