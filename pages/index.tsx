@@ -61,7 +61,7 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
           waitListRef.current?.scrollIntoView({ behavior: 'smooth' })
         }
       />
-      <Slices slices={sections} />
+      <Slices slices={sections} startLeft={false} />
       <ReviewSection reviews={reviews} />
       <WaitListSection waitListRef={waitListRef} />
       <FooterSection />

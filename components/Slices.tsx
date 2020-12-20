@@ -7,13 +7,18 @@ import { RichText } from 'prismic-reactjs';
 
 export interface SlicesProps {
   slices: HomePageSection[];
+  startLeft?: boolean;
 }
 
-const Slices: FC<SlicesProps> = ({ slices }) => {
+const Slices: FC<SlicesProps> = ({ slices, startLeft = true }) => {
   return (
     <>
       {slices.map(({ header, description, graphic }, index) => (
-        <ContentContainer alt={index % 2 === 0} key={index}>
+        <ContentContainer
+          alt={index % 2 === 0}
+          key={index}
+          textLeft={index % 2 ? startLeft : !startLeft}
+        >
           <Grid item xs={12} md={6} style={styles.gridColumn}>
             <Header>{RichText.asText(header)}</Header>
             <Box mt={5} pb={16}>
