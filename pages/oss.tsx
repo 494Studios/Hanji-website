@@ -5,6 +5,8 @@ import {
   ScrollAppBar,
   Slices,
   StyleSheet,
+  RepoCard,
+  RepoCardProps,
 } from '@components';
 import {
   Box,
@@ -18,7 +20,6 @@ import {
 } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 import React, { FC } from 'react';
-import RepoCard, { RepoCardProps } from 'components/oss/RepoCard';
 import {
   Client,
   HomePageSection,
