@@ -16,3 +16,7 @@ export { default as WaitListSection } from './main/WaitListSection';
 
 // About page
 export { default as AboutHeroContent } from './about/HeroContent';
+
+// OSS page
+export * from './oss/RepoCard';
+export { default as RepoCard } from './oss/RepoCard';
