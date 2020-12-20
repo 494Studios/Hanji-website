@@ -3,6 +3,7 @@ export { default as FooterSection } from './FooterSection';
 export { default as Header } from './Header';
 export { default as HeroSection } from './HeroSection';
 export { default as ScrollAppBar } from './ScrollAppBar';
+export { default as Slices } from './Slices';
 export { default as StyleSheet } from './StyleSheet';
 
 // Main page
