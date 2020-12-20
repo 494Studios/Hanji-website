@@ -1,14 +1,10 @@
 import React, { useRef } from 'react';
-import { Box, Grid, Typography } from '@material-ui/core';
-import Image from 'next/image';
 import {
-  ContentContainer,
   FooterSection,
-  Header,
   MainHeroSection,
   ReviewSection,
   ScrollAppBar,
-  StyleSheet,
+  Slices,
   WaitListSection,
 } from '@components';
 import {
@@ -18,7 +14,7 @@ import {
   Review,
   Slice,
 } from 'prismic-configuration';
-import { RichText, RichTextBlock } from 'prismic-reactjs';
+import { RichTextBlock } from 'prismic-reactjs';
 
 interface HomePageData {
   hero_title: RichTextBlock[];
@@ -65,34 +61,12 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
           waitListRef.current?.scrollIntoView({ behavior: 'smooth' })
         }
       />
-      {sections.map((section, index) => (
-        <ContentContainer alt={index % 2 === 0} key={index}>
-          <Grid item xs={12} md={6} style={styles.gridColumn}>
-            <Header>{RichText.asText(section.header)}</Header>
-            <Box mt={5} pb={16}>
-              <Typography variant="body1" color="textSecondary">
-                {RichText.asText(section.description)}
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Image src={section.graphic.url} width={400} height={800} />
-          </Grid>
-        </ContentContainer>
-      ))}
+      <Slices slices={sections} />
       <ReviewSection reviews={reviews} />
       <WaitListSection waitListRef={waitListRef} />
       <FooterSection />
     </div>
   );
-};
-
-const styles: StyleSheet = {
-  gridColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
 };
 
 export default IndexPage;

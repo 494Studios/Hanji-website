@@ -1,15 +1,14 @@
 import {
-  ContentContainer,
   FooterSection,
   Header,
   HeroSection,
   ScrollAppBar,
+  Slices,
   StyleSheet,
 } from '@components';
 import {
   Box,
   Container,
-  Grid,
   GridList,
   GridListTile,
   makeStyles,
@@ -19,7 +18,6 @@ import {
 } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 import React, { FC } from 'react';
-import Image from 'next/image';
 import RepoCard, { RepoCardProps } from 'components/oss/RepoCard';
 import {
   Client,
@@ -85,26 +83,7 @@ const OSSPage: FC<Props> = ({ title, sections, repoSection }) => {
           </Typography>
         </Container>
       </HeroSection>
-      {sections.map((section, index) => (
-        <ContentContainer alt={index % 2 === 0} key={index}>
-          <Grid item xs={12} md={6} style={styles.centered}>
-            <Header>{RichText.asText(section.header)}</Header>
-            <Box mt={5} pb={16}>
-              <Typography variant="body1" color="textSecondary">
-                {RichText.asText(section.description)}
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Image
-              src={section.graphic.url}
-              width={500}
-              height={380}
-              quality={100}
-            />
-          </Grid>
-        </ContentContainer>
-      ))}
+      <Slices slices={sections} />
       <Box pt={16} pb={16} bgcolor={grey[100]}>
         <Container>
           <Header>{RichText.asText(repoSection.header)}</Header>
