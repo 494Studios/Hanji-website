@@ -12,10 +12,6 @@ import { indigo } from '@material-ui/core/colors';
 import usePostEmail from 'hooks/usePostEmail';
 import React, { FC, useEffect, useState } from 'react';
 
-export interface WaitListProps {
-  onSubmit: (name: string, email: string) => void;
-}
-
 const CssTextField = withStyles({
   root: {
     '& .MuiInputBase-input': {
@@ -49,7 +45,7 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-const WaitListForm: FC<WaitListProps> = () => {
+const WaitListForm: FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
