@@ -15,15 +15,14 @@ const RepoCard: FC<RepoCardProps> = ({ name, description, link }) => {
     <Box mr={2} mb={2} display="flex" alignSelf="stretch">
       <Card elevation={5} style={styles.card}>
         <CardContent style={styles.cardContent}>
-          <Box display="flex" alignItems="center" mb={3}>
+          <Box display="flex" alignItems="center" mb={4}>
             <GitHub style={styles.icon} />
             <Typography variant="h4">{RichText.asText(name)}</Typography>
           </Box>
           <Typography
             variant="body1"
             color="textSecondary"
-            style={{ flexGrow: 1 }}
-            gutterBottom
+            style={{ flexGrow: 1, marginBottom: 24 }}
           >
             {RichText.asText(description)}
           </Typography>
@@ -54,7 +53,7 @@ const styles: StyleSheet = {
     justifyContent: 'space-between',
   },
   icon: {
-    marginRight: 8,
+    marginRight: 16,
     fontSize: '2.5rem',
   },
 };

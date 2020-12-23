@@ -66,8 +66,7 @@ const ReviewCard: FC<ReviewCardProps> = ({
           <Typography
             variant="body1"
             color="textSecondary"
-            align="center"
-            style={{ flexGrow: 1 }}
+            style={{ flexGrow: 1, marginLeft: 8, marginRight: 8 }}
             gutterBottom
           >
             {RichText.asText(description)}
