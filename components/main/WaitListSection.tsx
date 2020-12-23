@@ -11,9 +11,9 @@ const WaitListSection: FC<{ waitListRef: any }> = ({ waitListRef }) => {
           Let’s stay in touch
         </Typography>
         <Typography variant="body1" align="center" gutterBottom>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          Get notifications about our iOS release and other important updates.
         </Typography>
-        <WaitListForm onSubmit={() => {}} />
+        <WaitListForm />
       </Container>
     </Box>
   );
