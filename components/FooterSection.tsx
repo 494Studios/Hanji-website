@@ -9,6 +9,11 @@ const FooterSection: FC = () => {
         <Typography variant="body2" color="textSecondary" component="div">
           <Grid container spacing={3} justify="center">
             <Grid item>
+              <Link color="inherit" href="mailto:494studios@gmail.com">
+                Contact
+              </Link>
+            </Grid>
+            <Grid item>
               <Link color="inherit" href="/privacy">
                 Privacy Policy
               </Link>
