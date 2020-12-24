@@ -15,6 +15,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          <link rel="icon" href="/app-icon.svg" />
         </Head>
         <body>
           <Main />

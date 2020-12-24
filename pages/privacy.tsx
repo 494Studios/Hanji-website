@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { FooterSection, ScrollAppBar } from '@components';
 import {
   Box,
@@ -28,6 +29,9 @@ const PrivacyPage: FC<PrivacyPageData> = ({ title, content }) => {
 
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
+      <Head>
+        <title>Hanji - Privacy Policy</title>
+      </Head>
       <ScrollAppBar />
       <Toolbar style={{ background: palette.primary.main }} />
       <Container maxWidth="md" style={{ paddingBottom: 32 }}>

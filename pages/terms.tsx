@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { FooterSection, ScrollAppBar } from '@components';
 import {
   Box,
@@ -29,6 +30,9 @@ const TermsPage: FC<TermsPageData> = ({ title, content }) => {
 
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
+      <Head>
+        <title>Hanji - Terms of Use</title>
+      </Head>
       <ScrollAppBar />
       <Toolbar style={{ background: palette.primary.main }} />
       <Container maxWidth="md" style={{ paddingBottom: 32 }}>
