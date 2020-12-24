@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {
   FooterSection,
   HeroSection,
@@ -48,6 +49,9 @@ export async function getStaticProps() {
 const AboutPage: FC<Props> = ({ title, sections, companySection }) => {
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
+      <Head>
+        <title>Hanji - About</title>
+      </Head>
       <ScrollAppBar />
       <HeroSection>
         <Container maxWidth="md" style={styles.container}>

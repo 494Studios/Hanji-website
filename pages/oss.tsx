@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {
   FooterSection,
   Header,
@@ -76,6 +77,9 @@ const OSSPage: FC<Props> = ({ title, sections, repoSection }) => {
 
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
+      <Head>
+        <title>Hanji - Commitment to Open Source Software</title>
+      </Head>
       <ScrollAppBar />
       <HeroSection>
         <Container maxWidth="md" style={styles.container}>

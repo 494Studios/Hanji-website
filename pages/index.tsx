@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Head from 'next/head';
 import {
   FooterSection,
   MainHeroSection,
@@ -54,6 +55,9 @@ const IndexPage: React.FC<Props> = ({ hero, sections, reviews }) => {
 
   return (
     <div style={{ overflowX: 'hidden', margin: -8 }}>
+      <Head>
+        <title>Hanji - Find Korean Conjugations and Definitions</title>
+      </Head>
       <ScrollAppBar />
       <MainHeroSection
         {...hero}
