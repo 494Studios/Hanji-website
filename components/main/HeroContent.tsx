@@ -30,7 +30,7 @@ const HeroContent: FC<HeroContentProps> = ({
       <Grid container spacing={5} direction="column">
         <Grid item>
           <Typography variant="h1">{RichText.asText(title)}</Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" style={styles.secondaryText}>
             {RichText.asText(description)}
           </Typography>
         </Grid>
