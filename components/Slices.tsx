@@ -32,6 +32,7 @@ const Slices: FC<SlicesProps> = ({ slices, startLeft = true }) => {
               src={graphic.url}
               width={graphic.dimensions.width}
               height={graphic.dimensions.height}
+              quality={100}
             />
           </Grid>
         </ContentContainer>
