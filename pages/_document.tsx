@@ -16,6 +16,20 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
           <link rel="icon" href="/app-icon.svg" />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-K79MYBZ0QD"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-K79MYBZ0QD');
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />
