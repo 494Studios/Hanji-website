@@ -49,7 +49,7 @@ const HeroContent: FC<HeroContentProps> = ({
             </AndroidButton>
             <Box mt={5}>
               <Typography variant="h3" align="center">
-                4.6
+                4.8
               </Typography>
               <Typography
                 variant="body1"
