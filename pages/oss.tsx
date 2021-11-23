@@ -124,6 +124,7 @@ const styles: StyleSheet = {
   container: {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     position: 'relative',
   },
 };
