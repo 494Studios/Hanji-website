@@ -4,14 +4,23 @@ import {
   createTheme,
   responsiveFontSizes,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
 } from '@mui/material';
+import { grey } from '@mui/material/colors';
 
-// declare module '@mui/styles/defaultTheme' {
-//   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-//   interface DefaultTheme extends Theme {}
-// }
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    grey: true;
+  }
+}
+
+declare module '@mui/material' {
+  interface Color {
+    main: string;
+    dark: string;
+    contrastText: string;
+  }
+}
 
 export default class MyApp extends App {
   render() {
@@ -24,6 +33,10 @@ export default class MyApp extends App {
         },
         secondary: {
           main: '#F44336',
+        },
+        grey: {
+          main: grey[300],
+          dark: grey[400],
         },
       },
       typography: {
@@ -46,6 +59,21 @@ export default class MyApp extends App {
         },
         body1: {
           fontSize: '1.25rem',
+        },
+      },
+    });
+    // Add styling for Join Waitlist button
+    theme = createTheme(theme, {
+      components: {
+        MuiButton: {
+          variants: [
+            {
+              props: { variant: 'contained', color: 'grey' },
+              style: {
+                color: theme.palette.getContrastText(theme.palette.grey[300]),
+              },
+            },
+          ],
         },
       },
     });

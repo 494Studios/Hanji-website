@@ -8,18 +8,12 @@ import {
   useTheme,
 } from '@mui/material';
 import { grey } from '@mui/material/colors';
-import { makeStyles } from '@mui/styles';
 import { Review } from 'prismic-configuration';
 import React, { FC } from 'react';
 import ReviewCard from './ReviewCard';
 
-const useStyles = makeStyles({
-  tile: { display: 'flex' },
-});
-
 const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
   const theme = useTheme();
-  const classes = useStyles();
 
   const matchedMed = useMediaQuery(theme.breakpoints.up('md'));
   const matchedSm = useMediaQuery(theme.breakpoints.up('sm'));
@@ -41,7 +35,7 @@ const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
         </Box>
         <ImageList cols={cols} rowHeight="auto">
           {reviews.map((review, index) => (
-            <ImageListItem key={index} classes={{ standard: classes.tile }}>
+            <ImageListItem key={index}>
               <ReviewCard
                 title={review.title}
                 description={review.description}

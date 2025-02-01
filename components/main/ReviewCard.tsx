@@ -49,7 +49,7 @@ const ReviewCard: FC<ReviewCardProps> = ({
   }
 
   return (
-    <Box margin={2} display="flex" alignSelf="stretch">
+    <Box margin={2} display="flex" alignSelf="stretch" height={'100%'}>
       <Card elevation={5} style={styles.card}>
         <CardContent style={styles.cardContent}>
           <Box

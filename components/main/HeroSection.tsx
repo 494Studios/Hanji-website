@@ -32,6 +32,7 @@ const HeroSection: FC<HeroSectionProps> = ({ image, ...rest }) => {
             </Grid>
             <Grid item xs={12} md={6} style={styles.gridColumn}>
               <Image
+                alt="Screenshots of Hanji"
                 src={image.url}
                 width={image.dimensions.width}
                 height={image.dimensions.height}

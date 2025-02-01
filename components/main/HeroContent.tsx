@@ -65,6 +65,7 @@ const HeroContent: FC<HeroContentProps> = ({
           </Grid>
           <Grid item xs={6}>
             <Button
+              color="grey"
               variant="contained"
               size="large"
               fullWidth
