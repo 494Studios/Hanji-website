@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Elements, HTMLSerializer } from 'prismic-reactjs';
-import { Link, Typography } from '@material-ui/core';
+import { Link, Typography } from '@mui/material';
 
 // -- HTML Serializer
 // This function will be used to change the way the HTML is loaded

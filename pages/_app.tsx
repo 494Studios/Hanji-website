@@ -1,15 +1,23 @@
 import React from 'react';
 import App from 'next/app';
 import {
-  createMuiTheme,
+  createTheme,
   responsiveFontSizes,
   ThemeProvider,
-} from '@material-ui/core';
+  Theme,
+  StyledEngineProvider,
+} from '@mui/material';
+
+// declare module '@mui/styles/defaultTheme' {
+//   // eslint-disable-next-line @typescript-eslint/no-empty-interface
+//   interface DefaultTheme extends Theme {}
+// }
+
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
-    let theme = createMuiTheme({
+    let theme = createTheme({
       palette: {
         primary: {
           main: '#3F51B5',
@@ -44,9 +52,13 @@ export default class MyApp extends App {
     theme = responsiveFontSizes(theme);
 
     return (
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        (
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+        )
+      </StyledEngineProvider>
     );
   }
 }

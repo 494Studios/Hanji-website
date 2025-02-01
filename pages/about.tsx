@@ -6,7 +6,7 @@ import {
   Slices,
   StyleSheet,
 } from '@components';
-import { Box, Container, Typography } from '@material-ui/core';
+import { Box, Container, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { RichText, RichTextBlock } from 'prismic-reactjs';

@@ -1,5 +1,5 @@
-import { Box, Grid, Typography, Button, withStyles } from '@material-ui/core';
-import { green } from '@material-ui/core/colors';
+import { Box, Grid, Typography, Button, withStyles } from '@mui/material';
+import { green } from '@mui/material/colors';
 import AndroidIcon from '@material-ui/icons/Android';
 import { StyleSheet } from '@components';
 import React, { FC } from 'react';

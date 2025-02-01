@@ -5,7 +5,7 @@ import {
   CardContent,
   SvgIconProps,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   StarHalfRounded,
   StarOutlineRounded,

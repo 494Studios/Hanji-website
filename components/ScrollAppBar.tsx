@@ -11,7 +11,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
-} from '@material-ui/core';
+} from '@mui/material';
 import MenuIcon from '@material-ui/icons/Menu';
 import Image from 'next/image';
 import React, { cloneElement, CSSProperties, FC, ReactElement } from 'react';

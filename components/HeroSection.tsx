@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { Box, Container, Toolbar, useTheme } from '@material-ui/core';
+import { Box, Container, Toolbar, useTheme } from '@mui/material';
 import { StyleSheet } from '@components';
 
 interface HeroSectionProps {

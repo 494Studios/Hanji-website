@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardContent, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import { StyleSheet } from '@components';
 import { GitHub } from '@material-ui/icons';

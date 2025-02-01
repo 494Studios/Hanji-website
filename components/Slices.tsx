@@ -1,5 +1,5 @@
 import { ContentContainer, Header, StyleSheet } from '@components';
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@mui/material';
 import { HomePageSection } from 'prismic-configuration';
 import React, { FC } from 'react';
 import Image from 'next/image';

@@ -1,5 +1,5 @@
-import { Box, Container, Grid, Link, Typography } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import React, { FC } from 'react';
 
 const FooterSection: FC = () => {

@@ -7,8 +7,8 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-} from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
+} from '@mui/material';
+import { grey } from '@mui/material/colors';
 import { Review } from 'prismic-configuration';
 import React, { FC } from 'react';
 import ReviewCard from './ReviewCard';

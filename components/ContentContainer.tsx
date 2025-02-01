@@ -1,5 +1,5 @@
-import { Box, Container, Grid } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
+import { Box, Container, Grid } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import React, { FC } from 'react';
 
 export interface ContentContainerProps {

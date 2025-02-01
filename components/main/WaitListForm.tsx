@@ -7,8 +7,8 @@ import {
   TextField,
   Typography,
   withStyles,
-} from '@material-ui/core';
-import { indigo } from '@material-ui/core/colors';
+} from '@mui/material';
+import { indigo } from '@mui/material/colors';
 import usePostEmail from 'hooks/usePostEmail';
 import React, { FC, useEffect, useState } from 'react';
 
