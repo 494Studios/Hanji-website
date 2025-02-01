@@ -53,11 +53,9 @@ export default class MyApp extends App {
 
     return (
       <StyledEngineProvider injectFirst>
-        (
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>
-        )
       </StyledEngineProvider>
     );
   }

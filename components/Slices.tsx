@@ -29,10 +29,12 @@ const Slices: FC<SlicesProps> = ({ slices, startLeft = true }) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Image
+              alt={graphic.alt}
               src={graphic.url}
               width={graphic.dimensions.width}
               height={graphic.dimensions.height}
               quality={100}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </Grid>
         </ContentContainer>

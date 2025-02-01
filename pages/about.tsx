@@ -11,6 +11,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { Client, Graphic, HomePageSection, Slice } from 'prismic-configuration';
+import { relative } from 'path';
 
 interface AboutPageData {
   hero_title: RichTextBlock[];
@@ -69,10 +70,12 @@ const AboutPage: FC<Props> = ({ title, sections, companySection }) => {
           </Typography>
           <Box mt={8}>
             <Image
+              alt="about image"
               src={companySection.graphic.url}
               width={companySection.graphic.dimensions.width}
               height={companySection.graphic.dimensions.height}
               quality={100}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </Box>
         </Container>
