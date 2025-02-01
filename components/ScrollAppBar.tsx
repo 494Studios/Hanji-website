@@ -12,7 +12,7 @@ import {
   Menu,
   MenuItem,
 } from '@mui/material';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import React, { cloneElement, CSSProperties, FC, ReactElement } from 'react';
 
@@ -71,6 +71,7 @@ const ScrollAppBar: FC = () => {
                   color="inherit"
                   aria-label="menu"
                   onClick={(e) => setAnchorEl(e.currentTarget)}
+                  size="large"
                 >
                   <MenuIcon />
                 </IconButton>

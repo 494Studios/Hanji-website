@@ -21,7 +21,12 @@ const HeroSection: FC<HeroSectionProps> = ({ image, ...rest }) => {
       <Toolbar style={{ background: palette.primary.main }} />
       <Box pt={8} bgcolor={palette.primary.main}>
         <Container>
-          <Grid container spacing={10} alignItems="center" justify="center">
+          <Grid
+            container
+            spacing={10}
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item xs={12} md={6}>
               <HeroContent {...rest} />
             </Grid>

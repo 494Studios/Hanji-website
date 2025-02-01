@@ -10,7 +10,7 @@ import {
   StarHalfRounded,
   StarOutlineRounded,
   StarRounded,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import { StyleSheet } from '@components';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 

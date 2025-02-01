@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardContent, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import { StyleSheet } from '@components';
-import { GitHub } from '@material-ui/icons';
+import { GitHub } from '@mui/icons-material';
 import { Link, RichText, RichTextBlock } from 'prismic-reactjs';
 
 export interface RepoCardProps {

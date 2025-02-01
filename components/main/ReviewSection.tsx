@@ -1,14 +1,14 @@
 import {
   Box,
   Container,
-  GridList,
-  GridListTile,
-  makeStyles,
+  ImageList,
+  ImageListItem,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
 import { grey } from '@mui/material/colors';
+import { makeStyles } from '@mui/styles';
 import { Review } from 'prismic-configuration';
 import React, { FC } from 'react';
 import ReviewCard from './ReviewCard';
@@ -39,9 +39,9 @@ const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
             Reviews
           </Typography>
         </Box>
-        <GridList cols={cols} cellHeight="auto">
+        <ImageList cols={cols} rowHeight="auto">
           {reviews.map((review, index) => (
-            <GridListTile key={index} classes={{ tile: classes.tile }}>
+            <ImageListItem key={index} classes={{ standard: classes.tile }}>
               <ReviewCard
                 title={review.title}
                 description={review.description}
@@ -49,9 +49,9 @@ const ReviewSection: FC<{ reviews: Review[] }> = ({ reviews }) => {
                 source={review.source}
                 rating={review.rating}
               />
-            </GridListTile>
+            </ImageListItem>
           ))}
-        </GridList>
+        </ImageList>
       </Container>
     </Box>
   );

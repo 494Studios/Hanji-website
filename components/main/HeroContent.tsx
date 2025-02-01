@@ -1,6 +1,7 @@
-import { Box, Grid, Typography, Button, withStyles } from '@mui/material';
+import { Box, Grid, Typography, Button } from '@mui/material';
 import { green } from '@mui/material/colors';
-import AndroidIcon from '@material-ui/icons/Android';
+import { withStyles } from '@mui/styles';
+import AndroidIcon from '@mui/icons-material/Android';
 import { StyleSheet } from '@components';
 import React, { FC } from 'react';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
@@ -65,7 +66,6 @@ const HeroContent: FC<HeroContentProps> = ({
           <Grid item xs={6}>
             <Button
               variant="contained"
-              color="default"
               size="large"
               fullWidth
               disableElevation
