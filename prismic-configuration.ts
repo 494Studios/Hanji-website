@@ -2,8 +2,8 @@ import { RepoCardProps } from 'components/oss/RepoCard';
 import Prismic from 'prismic-javascript';
 import { RichTextBlock } from 'prismic-reactjs';
 
-export const apiEndpoint = 'process.env.NEXT_PUBLIC_PRISMIC_ENDPOINT as string';
-export const accessToken = 'process.env.NEXT_PUBLIC_PRISMIC_TOKEN';
+export const apiEndpoint = process.env.NEXT_PUBLIC_PRISMIC_ENDPOINT as string;
+export const accessToken = process.env.NEXT_PUBLIC_PRISMIC_TOKEN;
 
 // Client method to query documents from the Prismic repo
 export const Client = () => Prismic.client(apiEndpoint, { accessToken });
