@@ -11,7 +11,6 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { Client, Graphic, HomePageSection, Slice } from 'prismic-configuration';
-import { relative } from 'path';
 
 interface AboutPageData {
   hero_title: RichTextBlock[];

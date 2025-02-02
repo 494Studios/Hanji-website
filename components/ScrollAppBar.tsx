@@ -14,9 +14,15 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
-import React, { cloneElement, CSSProperties, FC, ReactElement } from 'react';
+import React, {
+  cloneElement,
+  CSSProperties,
+  FC,
+  ReactElement,
+  ReactNode,
+} from 'react';
 
-const ElevationScroll: FC = ({ children }) => {
+const ElevationScroll: FC<{ children: ReactNode }> = ({ children }) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -44,6 +50,7 @@ const ScrollAppBar: FC = () => {
           <Container style={styles.container}>
             <Link href="/" color="inherit" underline="none" style={styles.link}>
               <Image
+                alt="app icon"
                 src="/app-icon.svg"
                 layout="fixed"
                 width={48}

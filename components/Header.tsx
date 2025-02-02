@@ -1,7 +1,11 @@
 import { Box, Typography, useTheme } from '@mui/material';
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
-const Header: FC = ({ children }) => {
+export interface HeaderProps {
+  children: ReactNode;
+}
+
+const Header: FC<HeaderProps> = ({ children }) => {
   const theme = useTheme();
 
   return (
