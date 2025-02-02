@@ -1,21 +1,42 @@
 import React from 'react';
 import App from 'next/app';
 import {
-  createMuiTheme,
+  createTheme,
   responsiveFontSizes,
   ThemeProvider,
-} from '@material-ui/core';
+  StyledEngineProvider,
+} from '@mui/material';
+import { grey } from '@mui/material/colors';
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    grey: true;
+  }
+}
+
+declare module '@mui/material' {
+  interface Color {
+    main: string;
+    dark: string;
+    contrastText: string;
+  }
+}
+
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
-    let theme = createMuiTheme({
+    let theme = createTheme({
       palette: {
         primary: {
           main: '#3F51B5',
         },
         secondary: {
           main: '#F44336',
+        },
+        grey: {
+          main: grey[300],
+          dark: grey[400],
         },
       },
       typography: {
@@ -41,12 +62,29 @@ export default class MyApp extends App {
         },
       },
     });
+    // Add styling for Join Waitlist button
+    theme = createTheme(theme, {
+      components: {
+        MuiButton: {
+          variants: [
+            {
+              props: { variant: 'contained', color: 'grey' },
+              style: {
+                color: theme.palette.getContrastText(theme.palette.grey[300]),
+              },
+            },
+          ],
+        },
+      },
+    });
     theme = responsiveFontSizes(theme);
 
     return (
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </StyledEngineProvider>
     );
   }
 }

@@ -11,14 +11,14 @@ import {
 import {
   Box,
   Container,
-  GridList,
-  GridListTile,
-  makeStyles,
+  ImageList,
+  ImageListItem,
   Typography,
   useMediaQuery,
   useTheme,
-} from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
+} from '@mui/material';
+import { grey } from '@mui/material/colors';
+import { makeStyles } from '@mui/styles';
 import React, { FC } from 'react';
 import {
   Client,
@@ -94,17 +94,17 @@ const OSSPage: FC<Props> = ({ title, sections, repoSection }) => {
               {RichText.asText(repoSection.blurb)}
             </Typography>
           </Box>
-          <GridList
+          <ImageList
             cols={cols}
-            cellHeight="auto"
+            rowHeight="auto"
             style={{ overflow: 'visible' }}
           >
             {repoSection.repos.map((repo) => (
-              <GridListTile classes={{ tile: classes.tile }}>
+              <ImageListItem classes={{ standard: classes.tile }}>
                 <RepoCard {...repo} />
-              </GridListTile>
+              </ImageListItem>
             ))}
-          </GridList>
+          </ImageList>
         </Container>
       </Box>
       <FooterSection />

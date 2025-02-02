@@ -6,9 +6,9 @@ import {
   Snackbar,
   TextField,
   Typography,
-  withStyles,
-} from '@material-ui/core';
-import { indigo } from '@material-ui/core/colors';
+} from '@mui/material';
+import { indigo } from '@mui/material/colors';
+import { withStyles } from '@mui/styles';
 import usePostEmail from 'hooks/usePostEmail';
 import React, { FC, useEffect, useState } from 'react';
 

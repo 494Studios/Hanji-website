@@ -5,12 +5,12 @@ import {
   CardContent,
   SvgIconProps,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   StarHalfRounded,
   StarOutlineRounded,
   StarRounded,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import { StyleSheet } from '@components';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 
@@ -49,7 +49,7 @@ const ReviewCard: FC<ReviewCardProps> = ({
   }
 
   return (
-    <Box margin={2} display="flex" alignSelf="stretch">
+    <Box margin={2} display="flex" alignSelf="stretch" height={'100%'}>
       <Card elevation={5} style={styles.card}>
         <CardContent style={styles.cardContent}>
           <Box

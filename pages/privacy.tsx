@@ -1,12 +1,6 @@
 import Head from 'next/head';
 import { FooterSection, ScrollAppBar } from '@components';
-import {
-  Box,
-  Container,
-  Toolbar,
-  Typography,
-  useTheme,
-} from '@material-ui/core';
+import { Box, Container, Toolbar, Typography, useTheme } from '@mui/material';
 import { Client } from 'prismic-configuration';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 import React, { FC } from 'react';

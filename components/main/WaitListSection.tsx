@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@material-ui/core';
+import { Box, Container, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import WaitListForm from './WaitListForm';
 

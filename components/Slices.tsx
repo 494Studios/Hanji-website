@@ -1,5 +1,5 @@
 import { ContentContainer, Header, StyleSheet } from '@components';
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@mui/material';
 import { HomePageSection } from 'prismic-configuration';
 import React, { FC } from 'react';
 import Image from 'next/image';
@@ -29,10 +29,12 @@ const Slices: FC<SlicesProps> = ({ slices, startLeft = true }) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Image
+              alt={graphic.alt}
               src={graphic.url}
               width={graphic.dimensions.width}
               height={graphic.dimensions.height}
               quality={100}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </Grid>
         </ContentContainer>

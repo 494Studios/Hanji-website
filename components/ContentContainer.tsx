@@ -1,9 +1,10 @@
-import { Box, Container, Grid } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
-import React, { FC } from 'react';
+import { Box, Container, Grid } from '@mui/material';
+import { grey } from '@mui/material/colors';
+import React, { FC, ReactNode } from 'react';
 
 export interface ContentContainerProps {
   alt?: boolean;
+  children: ReactNode;
   textLeft?: boolean;
   backgroundColor?: string;
 }

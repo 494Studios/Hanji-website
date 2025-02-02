@@ -1,5 +1,5 @@
-import { Box, Container, Grid, Link, Typography } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import React, { FC } from 'react';
 
 const FooterSection: FC = () => {
@@ -7,7 +7,7 @@ const FooterSection: FC = () => {
     <Box pt={8} pb={8} bgcolor={grey[100]}>
       <Container>
         <Typography variant="body2" color="textSecondary" component="div">
-          <Grid container spacing={3} justify="center">
+          <Grid container spacing={3} justifyContent="center">
             <Grid item>
               <Link color="inherit" href="mailto:494studios@gmail.com">
                 Contact
